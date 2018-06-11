@@ -1,0 +1,21 @@
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Makemytripes {
+	
+	
+	public static void main(String arg[]) throws InterruptedException
+
+	{
+		System.setProperty("webdriver.chrome.driver","D:\\seleniumdrivers\\chromedriver.exe");
+		WebDriver obj = new ChromeDriver();
+		obj.get("https://www.makemytrip.com/");
+	//obj.switchTo().alert().accept();
+		obj.manage().window().maximize();
+		
+		
+		
+	}
+}

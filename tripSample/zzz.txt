@@ -1,0 +1,31 @@
+import com.mmt.Pageo.Pagefact;
+import com.mmt.Utilities.Browser;
+
+import org.testng.annotations.BeforeClass;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
+
+public class Mmttest {
+	
+	public static WebDriver obj;
+  @Test
+  public void ff() throws InterruptedException {
+	 
+	  Pagefact  pof = PageFactory.initElements(obj, Pagefact .class);
+	  pof.search( "Delhi (DEL)", "11 Jun, Mon","1");
+	  
+  }
+  @BeforeClass
+public void beforeClass() {
+	  obj = Browser.Browserfact("chrome", "https://www.makemytrip.com/");
+	
+	 
+ }
+
+  @AfterClass
+  public void afterClass() {
+	//obj.close();
+  }
+
+}

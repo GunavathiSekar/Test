@@ -1,0 +1,31 @@
+package com.mmt.Utilities;
+
+import java.io.File;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Browser {
+	
+	public static WebDriver obj;
+	public static WebDriver Browserfact(String browsername,String URL)
+	{
+	//	File file = new File("C:\\Users\\baraneetharan.r.KGFSL\\Desktop\\fff\\chromedriver.exe");
+//System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\baraneetharan.r.KGFSL\\Desktop\\chromedriver.exe");
+		 System.out.println(System.getProperty("webdriver.chrome.driver"));
+		   obj = new ChromeDriver();
+		//File file = new File("C:\\Users\\baraneetharan.r.KGFSL\\Desktop\\fff\\chromedriver.exe"); 
+
+		//System.setProperty("webdriver.chrome.driver", file.getAbsolutePath()); 
+
+		//System.setProperty("webdriver.chrome.logfile", "C:\\Users\\baraneetharan.r.KGFSL\\Desktop\\fff\\chrome.log");
+//
+		//obj = new ChromeDriver();	
+	       obj.get("https://www.makemytrip.com/flights/");
+		obj.manage().window().maximize();
+		return obj;
+		
+	}
+
+	}

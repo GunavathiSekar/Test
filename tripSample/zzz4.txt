@@ -1,0 +1,49 @@
+package com.mmt.Pageo;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class Pagefact {
+	
+	public static WebDriver obj;
+	 public Pagefact(WebDriver iobj){
+		 
+		 this.obj=iobj;
+	 }
+
+	 @FindBy(id="hp-widget__sfrom") WebElement sr;
+	 @FindBy(id="hp-widget__sTo") WebElement ss;
+	 @FindBy(id="hp-widget__depart") WebElement se;
+	 @FindBy(id="hp-widget__return") WebElement sd;
+	 @FindBy(id="hp-widget__paxCounter_pot") WebElement aa;
+	 @FindBy(id="searchBtn") WebElement srch;
+	 @FindBy(xpath="//div/div[6]/div[5]/div[2]/div[5]/div/div[2]/div[7]/p/a") WebElement sss;
+	 @FindBy(xpath="//div[2]/div[5]/div[1]/div[1]/div[8]/div[1]/a") WebElement sre;
+	 
+	 
+	 public void search(String to,String dept,String cnt) throws InterruptedException{
+		 
+		//r.sendKeys(from);
+		//bj.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		 ss.sendKeys(to);
+		 obj.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		 se.sendKeys(dept);
+		 obj.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		 obj.findElement(By.id("hp-widget__depart")).sendKeys(dept,"Keys+ENTER");
+		//d.sendKeys(Retn);
+		//bj.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		 //j.findElement(By.id("hp-widget__return")).sendKeys(Retn,"Keys+ENTER");
+		 aa.sendKeys(cnt);
+		 obj.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		 obj.findElement(By.id("hp-widget__paxCounter_pot")).sendKeys(cnt,"Keys+ENTER");
+		 
+		 srch.click();
+		 sss.click();
+		 sre.click();
+	 }
+	 }
+ 	 
